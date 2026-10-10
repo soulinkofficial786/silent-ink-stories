@@ -1,156 +1,634 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Silent Ink Stories — Urdu novels, stories, poetry and soulful writing.">
-  <title>Silent Ink Stories</title>
-<style>
-:root{--ink:#111516;--ink2:#191d1d;--cream:#f8f2e8;--paper:#fffaf3;--gold:#d7aa62;--gold2:#f1cf8f;--muted:#756d63;--line:#ded5c8}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);background:var(--paper);font-family:Poppins,Arial,sans-serif}a{text-decoration:none;color:inherit}.site-header{height:76px;background:#101414;color:#f9f1e5;display:flex;align-items:center;padding:0 5%;gap:40px;position:sticky;top:0;z-index:20;border-bottom:1px solid #343635}.brand{display:flex;align-items:center;gap:12px;margin-right:auto}.brand-mark{font-size:36px;color:var(--gold)}.brand strong{display:block;font:600 23px "Playfair Display",serif}.brand small{display:block;color:#c7beb0;font-size:11px;margin-top:1px}.site-header nav{display:flex;gap:27px;font-size:13px}.site-header nav a{padding:28px 0 23px;color:#eee8df}.site-header nav a:hover,.site-header nav a.active{color:var(--gold2);border-bottom:2px solid var(--gold)}.menu-toggle{display:none;background:none;border:0;color:#fff;font-size:25px}
-.hero{min-height:520px;background:linear-gradient(90deg,rgba(8,11,11,.94) 0%,rgba(8,11,11,.62) 50%,rgba(8,11,11,.28)),radial-gradient(circle at 75% 45%,#8d6542,#171b1b 55%,#090c0c);position:relative;color:#fff;display:flex;align-items:center;padding:70px 7%;overflow:hidden}.hero:after{content:"";position:absolute;right:5%;bottom:-100px;width:52%;height:520px;background:radial-gradient(ellipse,#7d5839 0%,transparent 65%);opacity:.45}.hero-content{max-width:610px;position:relative;z-index:2}.eyebrow{letter-spacing:4px;font-size:12px;color:var(--gold2);margin:0 0 8px}.hero h1{font:600 clamp(42px,6vw,76px)/1.05 "Playfair Display",serif;margin:0}.tagline{font:italic 22px "Playfair Display",serif;margin:8px 0 14px}.hero-copy{max-width:480px;color:#e7e0d6;line-height:1.8}.hero-urdu{position:absolute;right:8%;top:37%;z-index:3;text-align:center;font:28px "Amiri",serif;color:#f4eadb}.hero-urdu span{font-size:18px;color:#d8cbb8}.btn{display:inline-flex;align-items:center;gap:16px;padding:13px 22px;border-radius:28px;font-weight:600;font-size:13px;border:1px solid transparent}.btn-gold{background:var(--gold2);color:#181614}.btn-dark{background:#151818;color:#fff}.section{padding:48px 5.5%}.featured{background:#faf5ec}.section-title{display:flex;align-items:center;gap:10px;margin-bottom:25px}.section-title span{color:#9b6840;font-size:22px}.section-title h2{font:600 27px "Playfair Display",serif;margin:0}.section-title i{height:1px;width:85px;background:#b9ab99}.featured-grid{display:grid;grid-template-columns:250px 1fr 370px;gap:30px;align-items:center}.cover{min-height:300px;border-radius:9px;display:flex;align-items:flex-end;justify-content:center;text-align:center;padding:25px 15px;color:#f9e6bd;font:700 28px "Amiri",serif;box-shadow:0 14px 35px #0002;position:relative;overflow:hidden}.cover:before{content:"";position:absolute;inset:0;background:linear-gradient(160deg,#4c2524,#171b2c 52%,#c07b48);z-index:-1}.cover-featured small{position:absolute;bottom:8px;font:italic 14px "Playfair Display",serif;color:#f4dfb8}.featured-info h2{font:600 36px "Playfair Display",serif;margin:0}.featured-info .author{color:var(--muted)}.featured-info p:not(.author){line-height:1.9;max-width:580px}.meta{margin-top:20px;color:#725f4b;font-size:12px}.categories{background:#f5e7e0;border-radius:8px;padding:25px}.mini h3{font:600 22px "Playfair Display",serif;margin:0}.category-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.category-grid a{border:1px solid #dfd1c5;background:#fff9f3;border-radius:6px;min-height:90px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:#79573c;font-size:23px}.category-grid b{font-size:11px;color:#2a2723}.dark-section{background:#121717;color:#f6eee3}.dark-section .section-title h2{color:#f5eee4}.dark-section .section-heading>a{color:#e0b76e}.section-heading{display:flex;align-items:center;justify-content:space-between}.section-heading .section-title{margin-bottom:25px}.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.card{border:1px solid #3a3d3d;border-radius:8px;overflow:hidden;background:#181d1d}.fake-image,.story-art{height:150px;background-size:cover;background-position:center}.img1{background:linear-gradient(135deg,#4e3327,#1b2d36 55%,#bd7e55)}.img2{background:linear-gradient(135deg,#26323b,#171719 50%,#7b5540)}.img3{background:linear-gradient(135deg,#433127,#b17b59,#1b2020)}.img4{background:linear-gradient(135deg,#a06e50,#293a45,#1a2020)}.card-body{padding:13px;position:relative}.card-body small,.card-body time{color:#aaa59d;font-size:10px}.card-body h3{font-size:13px;font-weight:500;margin:7px 0 8px}.card-body>a{position:absolute;right:12px;bottom:12px;background:var(--gold2);color:#171717;width:25px;height:25px;border-radius:50%;display:grid;place-items:center}.novel-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:18px}.novel .cover{min-height:255px;font-size:24px}.novel .cover:before{background:linear-gradient(160deg,#6a4b39,#20283a 55%,#c28150)}.c2:before{background:linear-gradient(150deg,#42283a,#9e5d63,#1b2030)!important}.c3:before{background:linear-gradient(150deg,#182e38,#24385d,#101314)!important}.c4:before{background:linear-gradient(150deg,#132218,#49634c,#0d1110)!important}.c5:before{background:linear-gradient(150deg,#573f2f,#241d1b,#8a6044)!important}.c6:before{background:linear-gradient(150deg,#744d4d,#d18864,#25252c)!important}.novel h3{font-size:13px;margin:10px 0 3px}.novel small{color:var(--muted);font-size:11px}.story-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.story-grid article{border:1px solid #343838;border-radius:7px;overflow:hidden;background:#171b1b}.story-art{height:125px}.s1{background:linear-gradient(135deg,#5b4435,#15191a,#c0875d)}.s2{background:linear-gradient(135deg,#b17b5a,#2b2925,#6c4a37)}.s3{background:linear-gradient(135deg,#191b1d,#4b3428,#101516)}.s4{background:linear-gradient(135deg,#d18a68,#4e5960,#222727)}.story-grid article>div:last-child{padding:10px}.story-grid b,.story-grid span{display:block;font-size:12px}.story-grid span{color:#aaa;font-size:10px;margin-top:3px}.about{display:grid;grid-template-columns:1.1fr 1fr 1fr;min-height:260px;background:#f2e8dc}.about-art{background:linear-gradient(135deg,#5c493c,#9a7c62 45%,#202b2e)}.about-copy{padding:42px}.about-copy h2{font:600 26px "Playfair Display",serif}.about-copy p{color:#665e56;line-height:1.8;font-size:13px}.about blockquote{margin:0;padding:65px 45px;text-align:center;color:#785a46;font:italic 22px "Playfair Display",serif;background:#eadbd0}.reader{padding:80px 7%;background:#111616;color:#f4ede3}.reader-inner{max-width:800px;margin:auto;text-align:center}.reader h2{font:600 42px "Playfair Display",serif;margin:8px 0}.reader-meta{color:#d5b27a}.reader hr{border:0;border-top:1px solid #383b3a;margin:30px 0}.urdu-text{font:26px "Amiri",serif;line-height:2.1}.reader-controls{display:flex;justify-content:center;gap:10px;margin-top:35px}.reader-controls button{background:#252a29;color:#eee;border:1px solid #4b4e4d;border-radius:20px;padding:9px 16px}footer{background:#0d1111;color:#ddd;padding:40px 5% 20px;display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:35px}.footer-brand{display:flex;gap:12px;align-items:center}.footer-brand strong{display:block;font:600 22px "Playfair Display",serif}.footer-brand small{font-size:10px;color:#aaa}.footer-links{display:flex;flex-wrap:wrap;gap:12px 20px;align-content:center;font-size:12px;color:#c6c0b7}.subscribe b{font-size:12px}.subscribe div{display:flex;margin-top:10px}.subscribe input{min-width:0;width:180px;padding:10px;background:#171c1c;border:1px solid #4a4d4b;color:#fff}.subscribe button{padding:10px 12px;background:var(--gold2);border:0}.copyright{grid-column:1/-1;border-top:1px solid #343837;padding-top:18px;font-size:10px;color:#888}.copyright span{float:right}
-@media(max-width:1000px){.site-header{gap:15px}.site-header nav{gap:14px}.featured-grid{grid-template-columns:210px 1fr}.categories{grid-column:1/-1}.novel-grid{grid-template-columns:repeat(3,1fr)}.hero-urdu{display:none}.cards{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:700px){.site-header{height:66px;padding:0 5%}.brand strong{font-size:18px}.brand small{font-size:9px}.menu-toggle{display:block}.site-header nav{display:none;position:absolute;top:66px;left:0;right:0;background:#111616;padding:12px 6%;flex-direction:column;gap:0}.site-header nav.open{display:flex}.site-header nav a{padding:13px 0;border-bottom:1px solid #292d2c}.hero{min-height:480px;padding:50px 7%}.hero h1{font-size:47px}.featured-grid{grid-template-columns:1fr}.cover-featured{max-width:260px;margin:auto;width:100%}.category-grid{grid-template-columns:repeat(2,1fr)}.cards,.story-grid{grid-template-columns:1fr}.novel-grid{grid-template-columns:repeat(2,1fr);gap:14px}.novel .cover{min-height:220px}.section{padding:38px 5%}.section-title h2{font-size:23px}.section-heading>a{font-size:10px}.about{grid-template-columns:1fr}.about-art{height:180px}.about-copy{padding:30px}.about blockquote{padding:40px 20px}footer{grid-template-columns:1fr}.copyright span{float:none;display:block;margin-top:8px}}
 
-/* Reader dark mode */
-body.reader-dark .reader{background:#f4efe6;color:#191715}body.reader-dark .reader hr{border-color:#c8beb1}body.reader-dark .reader-controls button{background:#e5dccf;color:#191715;border-color:#b8aa98}
+  <meta name="description" content="Soulink — Read original Urdu novels, soulful stories, poetry, Islamic content and motivational writing.">
 
-</style>
+  <meta name="theme-color" content="#111616">
+  <title>Soulink | Silent Ink Stories</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Playfair+Display:wght@500;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --dark: #111616;
+      --dark2: #191f1e;
+      --cream: #fffaf2;
+      --gold: #e8c58a;
+      --gold-dark: #b88748;
+      --muted: #bdb4a8;
+      --line: #343a37;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: #24221f;
+      font-family: Poppins, Arial, sans-serif;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    button { font: inherit; cursor: pointer; }
+
+    .header {
+      min-height: 76px;
+      padding: 14px 6%;
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      background: var(--dark);
+      color: white;
+      border-bottom: 1px solid var(--line);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-right: auto;
+    }
+
+    .brand-icon {
+      font-size: 38px;
+      color: var(--gold);
+    }
+
+    .brand strong {
+      display: block;
+      font: 600 23px "Playfair Display", serif;
+    }
+
+    .brand small {
+      display: block;
+      color: var(--muted);
+      font-size: 10px;
+      margin-top: 3px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 23px;
+      font-size: 12px;
+    }
+
+    nav a:hover { color: var(--gold); }
+
+    .menu-toggle {
+      display: none;
+      color: white;
+      background: none;
+      border: 0;
+      font-size: 26px;
+    }
+
+    .hero {
+      min-height: 490px;
+      display: flex;
+      align-items: center;
+      padding: 65px 8%;
+      color: white;
+      background:
+        radial-gradient(ellipse at 80% 40%, #785337 0%, transparent 42%),
+        linear-gradient(120deg, #0c1010, #222725 65%, #151716);
+    }
+
+    .hero-content { max-width: 650px; }
+
+    .eyebrow {
+      color: var(--gold);
+      letter-spacing: 4px;
+      font-size: 11px;
+    }
+
+    .hero h1 {
+      font: 600 clamp(42px, 7vw, 76px)/1.08 "Playfair Display", serif;
+      margin: 15px 0 8px;
+    }
+
+    .tagline {
+      font: italic 22px "Playfair Display", serif;
+      color: var(--gold);
+    }
+
+    .hero p.description {
+      max-width: 510px;
+      color: #e1ddd5;
+      line-height: 1.9;
+      font-size: 14px;
+    }
+
+    .urdu-heading {
+      font: 29px/1.8 Amiri, serif;
+      color: var(--gold);
+      margin-top: 22px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 22px;
+      border-radius: 30px;
+      margin: 12px 8px 0 0;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: #171714;
+    }
+
+    .btn-outline {
+      border: 1px solid var(--gold);
+      color: var(--gold);
+    }
+
+    .section { padding: 48px 6%; }
+
+    .section-title {
+      font: 600 29px "Playfair Display", serif;
+      margin: 0 0 25px;
+    }
+
+    .section-title span { color: var(--gold-dark); }
+
+    .featured {
+      background: #f5ede1;
+    }
+
+    .featured-grid {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .book-cover {
+      min-height: 290px;
+      border-radius: 9px;
+      padding: 25px 15px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: var(--gold);
+      background: linear-gradient(145deg, #57382f, #202735 60%, #a16c43);
+      box-shadow: 0 12px 30px #0002;
+    }
+
+    .book-cover .urdu-title {
+      font: 700 34px Amiri, serif;
+    }
+
+    .book-cover small {
+      margin-top: 15px;
+      font: italic 16px "Playfair Display", serif;
+    }
+
+    .featured-info h3 {
+      font: 600 35px "Playfair Display", serif;
+      margin: 0 0 10px;
+    }
+
+    .featured-info p {
+      line-height: 1.9;
+      color: #655d53;
+      font-size: 14px;
+    }
+
+    .featured-info .urdu-copy {
+      font: 22px/2 Amiri, serif;
+      color: #38312b;
+    }
+
+    .dark-section {
+      background: var(--dark);
+      color: #fff8ee;
+    }
+
+    .dark-section .section-title { color: #fff8ee; }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 17px;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+      background: var(--dark2);
+    }
+
+    .card-art {
+      height: 140px;
+      background: linear-gradient(135deg, #65412d, #252c36, #9c704d);
+    }
+
+    .card:nth-child(2) .card-art {
+      background: linear-gradient(135deg, #433041, #24232c, #a66b61);
+    }
+
+    .card:nth-child(3) .card-art {
+      background: linear-gradient(135deg, #253a43, #141818, #846044);
+    }
+
+    .card:nth-child(4) .card-art {
+      background: linear-gradient(135deg, #5b5541, #292e2c, #a17a51);
+    }
+
+    .card-body { padding: 15px; }
+
+    .card-body small {
+      color: var(--gold);
+      font-size: 10px;
+    }
+
+    .card-body h3 {
+      font-size: 13px;
+      line-height: 1.7;
+      min-height: 43px;
+    }
+
+    .card-body time {
+      display: block;
+      color: #b9b2a8;
+      font-size: 10px;
+      margin-bottom: 15px;
+    }
+
+    .read-link {
+      display: inline-block;
+      color: var(--gold);
+      font-size: 12px;
+      border-bottom: 1px solid var(--gold-dark);
+      padding-bottom: 4px;
+    }
+
+    .novel-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 17px;
+    }
+
+    .novel {
+      padding: 20px;
+      border: 1px solid #e2d6c6;
+      border-radius: 8px;
+      background: #fffdf8;
+    }
+
+    .novel .symbol {
+      font: 36px Amiri, serif;
+      color: var(--gold-dark);
+    }
+
+    .novel h3 {
+      font: 600 19px "Playfair Display", serif;
+      margin: 8px 0;
+    }
+
+    .novel p {
+      color: #71675d;
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 35px;
+      align-items: center;
+      background: #f1e5d6;
+    }
+
+    .about h2 {
+      font: 600 30px "Playfair Display", serif;
+    }
+
+    .about p {
+      font-size: 13px;
+      line-height: 2;
+      color: #61584e;
+    }
+
+    .about-quote {
+      padding: 35px;
+      background: #e8d5c1;
+      border-left: 3px solid var(--gold-dark);
+      font: italic 23px/1.7 "Playfair Display", serif;
+      color: #634a36;
+    }
+
+    footer {
+      background: #0b0f0f;
+      color: #e7dfd4;
+      padding: 40px 6% 20px;
+    }
+
+    .footer-top {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 17px;
+      font-size: 12px;
+    }
+
+    .footer-links a:hover { color: var(--gold); }
+
+    .copyright {
+      margin-top: 30px;
+      border-top: 1px solid var(--line);
+      padding-top: 18px;
+      color: #aaa49b;
+      font-size: 10px;
+      line-height: 1.8;
+    }
+
+    @media (max-width: 850px) {
+      .header { gap: 10px; }
+      .menu-toggle { display: block; }
+      nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        padding: 15px 6%;
+        background: var(--dark);
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+      }
+      nav.open { display: flex; }
+      .featured-grid { grid-template-columns: 1fr; }
+      .book-cover { max-width: 250px; width: 100%; }
+      .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .about { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 520px) {
+      .brand strong { font-size: 18px; }
+      .brand small { font-size: 9px; }
+      .brand-icon { font-size: 30px; }
+      .hero { padding: 48px 6%; min-height: 440px; }
+      .hero h1 { font-size: 43px; }
+      .tagline { font-size: 19px; }
+      .section { padding: 36px 5%; }
+      .section-title { font-size: 25px; }
+      .cards { grid-template-columns: 1fr; }
+      .novel-grid { grid-template-columns: 1fr; }
+      .featured-info h3 { font-size: 29px; }
+      .about-quote { padding: 25px; }
+    }
+  </style>
 </head>
+
 <body>
-<header class="site-header">
-  <a class="brand" href="#">
-    <span class="brand-mark">✒</span>
-    <span><strong>Silent Ink Stories</strong><small>Where silent hearts find their words.</small></span>
+
+<header class="header">
+  <a class="brand" href="#home">
+    <span class="brand-icon">✒</span>
+    <span>
+      <strong>Soulink</strong>
+      <small>Silent Ink Stories</small>
+    </span>
   </a>
-  <button class="menu-toggle" aria-label="Open menu">☰</button>
+
+  <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu">☰</button>
+
   <nav id="mainNav">
-    <a class="active" href="#home">Home</a>
-    <a href="#novels">Novels</a>
-    <a href="#stories">Short Stories</a>
+    <a href="#home">Home</a>
+    <a href="#featured">Featured Novel</a>
     <a href="#episodes">Latest Episodes</a>
-    <a href="#popular">Popular</a>
+    <a href="#novels">Novels</a>
     <a href="#about">About</a>
   </nav>
 </header>
 
 <main id="home">
+
   <section class="hero">
-    <div class="hero-overlay"></div>
     <div class="hero-content">
       <p class="eyebrow">WELCOME TO</p>
-      <h1>Silent Ink Stories</h1>
+      <h1>Soulink</h1>
       <p class="tagline">Where silent hearts find their words.</p>
-      <p class="hero-copy">Explore Urdu novels, short stories, poetry and soulful writings. Let every page take you on a new journey.</p>
-      <a class="btn btn-gold" href="#novels">Explore Novels <span>→</span></a>
+
+      <p class="description">
+        A creative space for original Urdu novels, soulful quotes,
+        Islamic content, poetry and motivational writing that connects
+        hearts and minds.
+      </p>
+
+      <div class="urdu-heading" dir="rtl">
+        خاموش دلوں کی آواز
+      </div>
+
+      <a class="btn btn-gold" href="#episodes">Read Latest Episode →</a>
+      <a class="btn btn-outline" href="#featured">Explore Novels</a>
     </div>
-    <div class="hero-urdu" dir="rtl">خاموش سیاہی کی کہانیاں<br><span>جہاں خاموش دل لفظ پاتے ہیں۔</span></div>
   </section>
 
-  <section class="section featured" id="novels">
-    <div class="section-title"><span>▣</span><h2>Featured Novel</h2><i></i></div>
+  <section class="section featured" id="featured">
+    <h2 class="section-title"><span>✦</span> Featured Novel</h2>
+
     <div class="featured-grid">
-      <div class="cover cover-featured">
-        <div class="cover-art">بارزخِ ذات</div>
+      <div class="book-cover">
+        <div class="urdu-title" dir="rtl">برزخِ ذات</div>
         <small>Barzakh-e-Zaat</small>
       </div>
+
       <div class="featured-info">
-        <h2>Barzakh-e-Zaat</h2>
-        <p class="author">By: Silent Ink</p>
-        <p dir="rtl">ایک ایسی کہانی جو صرف محبت نہیں، بلکہ وجود، خواب، اور وقت کے درمیان کے پردے سے بھی آگے آئے۔</p>
-        <a class="btn btn-dark" href="#reader">Start Reading <span>→</span></a>
-        <div class="meta">▣ 12 Episodes &nbsp; • &nbsp; Romance / Mystery</div>
-      </div>
-      <div class="categories">
-        <div class="section-title mini"><span>♧</span><h3>Popular Categories</h3></div>
-        <div class="category-grid">
-          <a href="#novels">♡<b>Urdu Novels</b></a>
-          <a href="#novels">♡<b>Romantic</b></a>
-          <a href="#novels">♜<b>Islamic</b></a>
-          <a href="#novels">⌕<b>Mystery</b></a>
-          <a href="#novels">♙<b>Social</b></a>
-          <a href="#stories">✒<b>Short Stories</b></a>
-        </div>
+        <h3>Barzakh-e-Zaat</h3>
+        <p>Original writing · Silent Ink Stories</p>
+
+        <p class="urdu-copy" dir="rtl">
+          ایک ایسی کہانی جو انسان کے باطن، وجود کے سوالات،
+          خوابوں اور روح کے خاموش سفر کو بیان کرتی ہے۔
+        </p>
+
+        <p>
+          Enter a world of emotions, mystery and self-discovery
+          through an original Urdu novel.
+        </p>
+
+        <a class="btn btn-gold" href="episode-1.html">
+          Start Reading Episode 1 →
+        </a>
       </div>
     </div>
   </section>
 
   <section class="section dark-section" id="episodes">
-    <div class="section-heading"><div class="section-title"><span>◷</span><h2>Latest Episodes</h2><i></i></div><a href="#">View All Episodes →</a></div>
-    <div class="cards episode-cards">
-      <article class="card image-card"><div class="fake-image img1"></div><div class="card-body"><small>Barzakh-e-Zaat</small><h3>Episode 1 — پہلا شگاف</h3><time>Sep 01, 2026</time><a href="#reader">→</a></div></article>
-      <article class="card image-card"><div class="fake-image img2"></div><div class="card-body"><small>Barzakh-e-Zaat</small><h3>Episode 2 — اندرونی کہانی</h3><time>Sep 03, 2026</time><a href="#reader">→</a></div></article>
-      <article class="card image-card"><div class="fake-image img3"></div><div class="card-body"><small>Soulink</small><h3>Episode 1 — آغاز</h3><time>Aug 28, 2026</time><a href="#reader">→</a></div></article>
-      <article class="card image-card"><div class="fake-image img4"></div><div class="card-body"><small>Dastan-e-Dil</small><h3>Episode 1 — ایک نئی صبح</h3><time>Aug 25, 2026</time><a href="#reader">→</a></div></article>
+    <h2 class="section-title"><span>✦</span> Latest Episodes</h2>
+
+    <div class="cards">
+
+      <article class="card">
+        <div class="card-art"></div>
+        <div class="card-body">
+          <small>BARZAKH-E-ZAAT</small>
+          <h3>Episode 1 — پہلا شگاف</h3>
+          <time>Episode 1</time>
+          <a class="read-link" href="episode-1.html">Read Full Episode →</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-art"></div>
+        <div class="card-body">
+          <small>BARZAKH-E-ZAAT</small>
+          <h3>Episode 2 — اندرونی کہانی</h3>
+          <time>Coming Soon</time>
+          <a class="read-link" href="episode-1.html">Read Episode 1 →</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-art"></div>
+        <div class="card-body">
+          <small>SOULFUL WRITING</small>
+          <h3>Words That Touch the Heart</h3>
+          <time>Soulink Stories</time>
+          <a class="read-link" href="#about">Explore Soulink →</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-art"></div>
+        <div class="card-body">
+          <small>ORIGINAL STORIES</small>
+          <h3>More Stories Are Coming</h3>
+          <time>Stay Connected</time>
+          <a class="read-link" href="#novels">Explore More →</a>
+        </div>
+      </article>
+
     </div>
   </section>
 
-  <section class="section" id="popular">
-    <div class="section-heading"><div class="section-title"><span>♨</span><h2>Popular Novels</h2><i></i></div><a href="#novels">View All Novels →</a></div>
+  <section class="section" id="novels">
+    <h2 class="section-title"><span>✦</span> Explore Our Collection</h2>
+
     <div class="novel-grid">
-      <article class="novel"><div class="cover c1">بارزخِ ذات</div><h3>Barzakh-e-Zaat</h3><small>12 Episodes</small></article>
-      <article class="novel"><div class="cover c2" dir="rtl">سنو میری بات</div><h3>Suno Meri Baat</h3><small>10 Episodes</small></article>
-      <article class="novel"><div class="cover c3" dir="rtl">روشنی کا سفر</div><h3>Roshni Ka Safar</h3><small>8 Episodes</small></article>
-      <article class="novel"><div class="cover c4" dir="rtl">کھوئے ہوئے خواب</div><h3>Khwye Hue Khwaab</h3><small>15 Episodes</small></article>
-      <article class="novel"><div class="cover c5" dir="rtl">خاموش محبت</div><h3>Khamosh Mohabbat</h3><small>7 Episodes</small></article>
-      <article class="novel"><div class="cover c6" dir="rtl">ایک ادھوری کہانی</div><h3>Ek Adhoori Kahani</h3><small>9 Episodes</small></article>
+
+      <article class="novel">
+        <div class="symbol" dir="rtl">برزخِ ذات</div>
+        <h3>Barzakh-e-Zaat</h3>
+        <p>An original Urdu novel exploring the inner self, emotions and the mysteries of existence.</p>
+        <a class="read-link" href="episode-1.html">Read Episode 1 →</a>
+      </article>
+
+      <article class="novel">
+        <div class="symbol" dir="rtl">لفظ</div>
+        <h3>Soulful Quotes</h3>
+        <p>Thoughtful words, heartfelt reflections and quotes for quiet moments.</p>
+        <a class="read-link" href="#about">Explore Soulink →</a>
+      </article>
+
+      <article class="novel">
+        <div class="symbol" dir="rtl">روشنی</div>
+        <h3>Islamic & Motivational Writing</h3>
+        <p>Reflective content, inspiration and reminders to bring hope into everyday life.</p>
+        <a class="read-link" href="#about">Discover More →</a>
+      </article>
+
     </div>
   </section>
 
-  <section class="section dark-section" id="stories">
-    <div class="section-heading"><div class="section-title"><span>▤</span><h2>Short Stories</h2><i></i></div><a href="#">View All Short Stories →</a></div>
-    <div class="story-grid">
-      <article><div class="story-art s1"></div><div><b dir="rtl">ایک خط</b><span>Ek Khat</span></div></article>
-      <article><div class="story-art s2"></div><div><b dir="rtl">چائے اور باتیں</b><span>Chai aur Baatein</span></div></article>
-      <article><div class="story-art s3"></div><div><b dir="rtl">وہ آخری ملاقات</b><span>Woh Aakhri Mulaqat</span></div></article>
-      <article><div class="story-art s4"></div><div><b dir="rtl">خوابوں کی ایک شام</b><span>Khwabon ki Ek Shaam</span></div></article>
+  <section class="section about" id="about">
+    <div>
+      <h2>About Soulink</h2>
+
+      <p>
+        Soulink, also known as Silent Ink Stories, is a creative blog
+        sharing original Urdu novels, soulful quotes, Islamic content
+        and motivational writings.
+      </p>
+
+      <p>
+        Every story begins with a feeling. Our aim is to give those
+        feelings words and create a space where readers can pause,
+        reflect and connect with the stories they read.
+      </p>
+
+      <a class="btn btn-gold" href="episode-1.html">Read Barzakh-e-Zaat →</a>
+    </div>
+
+    <div class="about-quote">
+      “Some feelings remain silent until a story gives them a voice.”
     </div>
   </section>
 
-  <section class="about" id="about">
-    <div class="about-art"></div>
-    <div class="about-copy">
-      <h2>About Silent Ink Stories</h2>
-      <p>Silent Ink Stories is a humble space for stories, feelings and thoughts to live. We believe in the power of words — the kind that heal, inspire and stay with you long after you've turned the last page.</p>
-      <a class="btn btn-gold" href="#">Learn More →</a>
-    </div>
-    <blockquote>“Good stories never end...<br>they just stay in our hearts.”</blockquote>
-  </section>
 </main>
 
-<section class="reader" id="reader">
-  <div class="reader-inner">
-    <p class="eyebrow">READING ROOM</p>
-    <h2>Barzakh-e-Zaat</h2>
-    <p class="reader-meta">Episode 1 — پہلا شگاف</p>
-    <hr>
-    <p dir="rtl" class="urdu-text">یہاں آپ کے ناول کا مکمل متن آئے گا۔ یہ ریڈنگ پیج بعد میں ہر ایپی سوڈ کے لیے الگ بنایا جا سکتا ہے۔</p>
-    <div class="reader-controls"><button>A−</button><button>Dark Mode</button><button>A+</button></div>
-  </div>
-</section>
-
 <footer>
-  <div class="footer-brand"><span class="brand-mark">✒</span><div><strong>Silent Ink Stories</strong><small>Where silent hearts find their words.</small></div></div>
-  <div class="footer-links"><a href="#home">Home</a><a href="#novels">Novels</a><a href="#stories">Short Stories</a><a href="#episodes">Latest Episodes</a><a href="#popular">Popular</a><a href="#about">About</a></div>
-  <div class="subscribe"><b>Subscribe for Updates</b><div><input type="email" placeholder="Your email address"><button>Subscribe</button></div></div>
-  <div class="copyright">© 2026 Silent Ink Stories. All rights reserved. <span>Privacy Policy &nbsp; | &nbsp; Terms & Conditions</span></div>
+  <div class="footer-top">
+    <div>
+      <div class="brand">
+        <span class="brand-icon">✒</span>
+        <span>
+          <strong>Soulink</strong>
+          <small>Silent Ink Stories</small>
+        </span>
+      </div>
+      <p style="font-size:12px;color:#bbb5aa;line-height:1.8">
+        Where silent hearts find their words.
+      </p>
+    </div>
+
+    <div class="footer-links">
+      <a href="#home">Home</a>
+      <a href="#featured">Featured Novel</a>
+      <a href="#episodes">Episodes</a>
+      <a href="#novels">Novels</a>
+      <a href="#about">About</a>
+      <a href="episode-1.html">Episode 1</a>
+    </div>
+  </div>
+
+  <div class="copyright">
+    © 2026 Soulink — Silent Ink Stories. All rights reserved.
+    <br>
+    Original writing and stories belong to their respective author.
+  </div>
 </footer>
+
 <script>
-const toggle=document.querySelector(".menu-toggle");
-const nav=document.querySelector("#mainNav");
-toggle?.addEventListener("click",()=>nav.classList.toggle("open"));
-document.querySelectorAll("#mainNav a").forEach(a=>a.addEventListener("click",()=>nav.classList.remove("open")));
+  const menuToggle = document.getElementById("menuToggle");
+  const mainNav = document.getElementById("mainNav");
 
-const text=document.querySelector(".urdu-text");
-const controls=document.querySelectorAll(".reader-controls button");
-let fontSize=26;
-controls[0]?.addEventListener("click",()=>{fontSize=Math.max(18,fontSize-2); if(text) text.style.fontSize=fontSize+"px";});
-controls[2]?.addEventListener("click",()=>{fontSize=Math.min(38,fontSize+2); if(text) text.style.fontSize=fontSize+"px";});
-controls[1]?.addEventListener("click",()=>document.body.classList.toggle("reader-dark"));
+  menuToggle.addEventListener("click", function () {
+    mainNav.classList.toggle("open");
+  });
 
+  mainNav.querySelectorAll("a").forEach(function (link) {
+    link.addEventListener("click", function () {
+      mainNav.classList.remove("open");
+    });
+  });
 </script>
+
 </body>
 </html>
